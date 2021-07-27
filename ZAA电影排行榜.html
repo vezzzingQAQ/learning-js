@@ -8,34 +8,36 @@
 		<meta name="description" content="StartAt2021.3.8">
 		<meta name="author" content="VEZZZING">    
         <style type="text/css">
-            .father{
-                width: 300px;
-                height: 300px;
-                display: block;
-                background-color: rgb(121, 35, 190);
+            *{
+                margin: 0;
+                padding: 0;
             }
-            .son{
-                width: 150px;
-                height: 150px;
-                display: block;
-                background-color: rgb(190, 35, 100);
+            .box{
+                width: 300px;
+                height: 450px;
+                margin: 50px auto;
+                border: 1px solid #000;
             }
         </style>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
         <script type="text/javascript" class="231">
             $(function(){
-               $(".father").hover(function(){
-                    $(".output").html("<p>移入father</p>");
-               },function(){
-                   $(".output").html("<p>移出father</p>");
-               })
+               
             });
         </script>
     </head>
     <body>
-        <div class="father">
-            <div class="son"></div>
+        <div class="box">
+            <h1>❤❤❤❤❤❤❤❤❤❤❤</h1>
+            <ul>
+                <li><span>1</span>名称</li>
+                <li><span>2</span>名称</li>
+                <li><span>3</span>名称</li>
+                <li><span>4</span>名称</li>
+                <li><span>5</span>名称</li>
+                <li><span>6</span>名称</li>
+                <li><span>7</span>名称</li>
+            </ul>
         </div>
-        <div class="output"></div>
     </body>
 </html>
