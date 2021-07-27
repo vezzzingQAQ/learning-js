@@ -26,33 +26,37 @@
                 background-color: rgba(0, 0, 0, 0.486);
             }
             .login{
-                width: ;
+                width: 478px;
+                height: 284px;
+                margin: 200px auto;
+                background-image: url("pictures/login.jpg");
+                position: relative;
+            }
+            .login>span{
+                width: 40px;
+                height: 40px;
+                background-color: aqua;
+                position: absolute;
+                top: 0;
+                right: 0;
             }
         </style>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
         <script type="text/javascript" class="231">
             $(function(){
-                $("button").click(function(){
-                    $("ul").append("<li>added li</li>");
+                $("a").click(function(){
+                    var mask="<div class=\"mask\">\n"+
+                        "<div class=\"login\">\n"+
+                        "<span></span>\n"+
+                        "</div>\n"+
+                        "</div>\n";
+                    $("body").append(mask);
+                    return false;
                 });
-                /*
-                $("ul>li").click(function(){
-                    $("div").text($(this).html());
-                })
-                这样写后面新增的不会响应*/
-                //jQuery委托
-                $("ul").delegate("li","click",function(){
-                    $("div").text($(this).html());
-                })
             });
         </script>
     </head>
     <body>
-        <div class="mask">
-            <div class="login">
-                
-            </div>
-        </div>
         <a href="www.baidu.com">点击登录</a>
         <div>
             VezzzingQAQyydsVezzzingQAQyydsVezzzingQAQyydsVezzzingQAQyydsVezzzingQAQyydsVezzzingQAQyydsVezzzingQAQyydsVezzzingQAQyydsVezzzingQAQyydsVezzzingQAQyydsVezzzingQAQyydsVezzzingQAQyydsVezzzingQAQyydsVezzzingQAQyyds
