@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS质数判断</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.3.8">
+		<meta name="author" content="VEZZZING">    
+    </head>
+    <body>
+        <script type="text/javascript" class="231">
+            var btn=document.getElementById("btnSearch")
+            btn.onclick=function(){
+                var flag=true;
+                for(var i=3;i<10000;i++){
+                    flag=true;
+                    for(var num=2;num<i;num++){
+                        if(i % num==0){
+                            flag=false
+                            break;
+                        }
+                    }
+                    if(flag){
+                        document.write(i+"<br>")
+                    }
+                }
+            }
+        </script>
+        <form>
+            <label>这里输入开始寻找的值<input id="numberStart" type="number"></label>
+            <label>这里输入停止寻找的值<input id="numberEnd" type="number"></label>
+            <button id="btnSearch">开始搜索</button>
+        </form>
+        <form>
+            <textarea id="output"></textarea>
+        </form>
+    </body>
+</html>
+        

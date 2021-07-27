@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS编写位置</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.3.8">
+		<meta name="author" content="VEZZZING">    
+        <script type="text/javascript" class="231">
+            var number1=+prompt("请输入第一个数")
+            var number2=+prompt("请输入第二个数")
+            var number3=+prompt("请输入第三个数")
+            /*prompt函数返回值是string,在之前加+转换成number*/
+            if(number1<number1 && number1<number3){
+                if(number2<number3){
+                    alert(number1+","+number2+","+number3);
+                }else{
+                    alert(number1+","+number3+","+number2);
+                }
+            }else if(number2<number1 && number2<number3){
+                if(number1<number3){
+                    alert(number2+","+number1+","+number3);
+                }else{
+                    alert(number2+","+number3+","+number1);
+                }
+            }else{
+                if(number1<number2){
+                    alert(number3+","+number1+","+number2)
+                }else{
+                    alert(number3+","+number2+","+number1)
+                }
+            }
+            document.write("WELCOME")
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+        

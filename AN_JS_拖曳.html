@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>拖曳实例</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.3.8">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+            #box1{
+                width: 100px;
+                height: 100px;
+                background-color: coral;
+                position: absolute;
+            }
+        </style>
+        <script type="text/javascript" class="231">
+           window.onload=function(){
+                var box1=document.getElementById("box1");
+                box1.onmousedown=function(event){
+                    event=event||window.event;
+                    var ox=event.clientX-box1.offsetLeft;
+                    var oy=event.clientY-box1.offsetTop;
+                    /*只能写在内部*/
+                    document.onmousemove=function(event){
+                        event=event||window.event;
+                        var x=event.clientX-ox;
+                        var y=event.clientY-oy;
+
+                        box1.style.left=x+"px";
+                        box1.style.top=y+"px"
+                    };
+                    
+                    document.onmouseup=function(){
+                        //取消document的onMouseMove事件
+                        document.onmousemove=null;
+                        document.onmouseup=null;
+                    };
+                    //浏览器中选中后拖曳会自动搜索导致功能错误
+                    //取消这个功能
+                    return false;
+                };
+            };
+        </script>
+    </head>
+    <body>
+        <p>233233</p>
+        <div id="box1"></div>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jquery</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.3.8">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+            input{
+                width: 700px
+            }
+            img{
+                position: absolute;
+                display: block;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script type="text/javascript" class="231">
+            window.onload=function(){
+                var btn=document.getElementsByTagName("button")[0];
+                btn.onclick=function(){
+                    var input=document.getElementsByTagName("input")[0];
+                    var text=input.value;
+                    $("img").attr("src",text);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" value="https://www.baidu.com/img/bd_logo1.png?where=super">
+        <button>切换图片</button>
+        <img src="https://www.baidu.com/img/bd_logo1.png?where=super" alt="">
+    </body>
+</html>

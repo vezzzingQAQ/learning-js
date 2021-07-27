@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>键盘移动div【定时器】</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.3.8">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+            body{
+                padding: 0;
+                margin: 0;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+            .b1{
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                background-color: rgb(48, 95, 99);
+            }
+            .b2{
+                width: 200px;
+                background-color: rgb(77, 104, 52);
+            }
+            
+            .btn{
+                position: relative;
+                display: block;
+                margin: auto;
+                margin-top: 50px;
+                background-color: cornflowerblue;
+                border: 3px solid rgba(0,0,0,0.3);
+                outline: 7px solid rgba(0,0,0,0.5);
+                transition: 0.25s ease-in-out;
+            }
+            .btn:hover{
+                outline: 18px solid rgba(0,0,0,0.1);
+                border: 3px solid rgba(0,0,0,0);
+                background-color: rgb(178, 150, 223);
+            }
+            .btn:active{
+                background-color: rgb(98, 156, 204);
+                transition: 0.1s;
+            }
+        </style>
+        <script type="text/javascript" class="231">
+            window.onload=function(){
+                var box=document.getElementById("box1");
+                var btn01=document.getElementById("button1");
+                var btn02=document.getElementById("button2");
+                var btn03=document.getElementById("button3");
+
+                btn01.onclick=function(){
+                    addClass(box,"b2");
+                }
+                btn02.onclick=function(){
+                    removeClass(box,"b2");
+                }
+                btn03.onclick=function(){
+                    toggleClass(box,"b2");
+                }
+            };
+            function addClass(obj,cn){
+                //obj:要添加class属性的元素，cn:要添加的class值
+                if(!hasClass(obj,cn)){
+                    obj.className+=" "+cn;
+                }
+            }
+            function removeClass(obj,cn){
+                //删除元素中的指定class属性
+                var reg=new RegExp("\\b"+cn+"\\b");
+                obj.className=obj.className.replace(reg,"");//用空字符串替换原有的
+            }
+            function toggleClass(obj,cn){
+                //用来切换一个类：有，就删除，没有这个类，就添加
+                if(hasClass(obj,cn)){
+                    removeClass(obj,cn);
+                }else{
+                    addClass(obj,cn);
+                }
+            }
+
+            function hasClass(obj,cn){
+                //判断一个元素中是否含有指定的class属性值
+                //防止addClass函数出现b1 b2 b2 b2 b2...的情况
+                //若有，返回true，不然，false
+
+                //var reg=/\bb2\b/;// \b判断单词边界 这样没法传入变量
+                var reg=new RegExp("\\b"+cn+"\\b");
+                return reg.test(obj.className);
+            }
+        </script>
+    </head>
+    <body>
+        <button id="button1" class="btn">点击添加box1的样式</button>
+        <button id="button2" class="btn">点击删除box1的样式</button>
+        <button id="button3" class="btn">点击切换box1的样式</button>
+
+        <div id="box1" class="b1"></div>
+    </body>
+</html>

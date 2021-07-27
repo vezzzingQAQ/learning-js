@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS质数判断</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.3.8">
+		<meta name="author" content="VEZZZING">    
+        <script type="text/javascript" class="231">
+            var flag=true;
+            var i=parseInt(prompt("输入这个数："))
+            while(true){
+                flag=true;
+                for(var num=2;num<i;num++){
+                    if(i % num==0){
+                        flag=false;
+                        break;
+                    }
+                }
+                if(flag){
+                    alert("you're right");
+                }else{
+                    alert("uh,not");
+                }
+                i=parseInt(prompt("输入这个数："));
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+        

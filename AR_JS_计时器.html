@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>计时器</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.3.8">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+            #box1{
+                width: 100px;
+                height: 100px;
+                background-color: coral;
+                position: absolute ;
+            }
+            h1{
+                text-align: center;
+            }
+        </style>
+        <script type="text/javascript" class="231">
+            window.onload=function(){
+                    var number=1;
+                    var count=document.getElementById("numbers");
+                    var timer1=setInterval(function(){
+                        count.innerHTML=number++;
+                        if(number==100){
+                            clearInterval(timer1);/*关闭定时器*/
+                        }
+                    },20);/*将一个函数每隔一段时间执行一次*/ 
+            };
+        </script>
+    </head>
+    <body>
+        <div id="box1">
+            <h1 id="numbers">1</h1>
+        </div>
+    </body>
+</html>

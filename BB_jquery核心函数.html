@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jquery</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.3.8">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+            
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script type="text/javascript" class="231">
+            $(function(){
+                alert("hello jquery");
+
+                var $box1=$(".box1");
+                var $box2=$(".box2");
+                console.log($box1);
+                console.log($box2);
+
+                var $p=$("<p>aparagraphy</p>");
+                console.log($p);
+                $box2.append($p);
+
+                var span=document.querySelector("span");
+                var $span=$(span);
+                console.log(span);
+                console.log($span);
+                //包装成jQuery对象
+            });
+        </script>
+    </head>
+    <body>
+        <box class="box1"></box>
+        <box class="box2"></box>
+        <span></span>
+    </body>
+</html>

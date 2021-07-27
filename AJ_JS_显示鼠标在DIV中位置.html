@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>鼠标位置</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.3.8">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+           #area{
+               width: 500px;
+               height:500px;
+               margin: auto;
+               background-color: cadetblue;
+           }
+           #show{
+               width: 500px;
+               height: 100px;
+               margin: auto;
+               text-align: center;
+               background-color: darkkhaki;
+           }
+           a{
+               text-align: center;
+               background-color: darksalmon;
+               display: block;
+               margin: auto;
+               width: 500px;
+               padding-top: 20px;
+               padding-bottom: 20px;
+           }
+        </style>
+        <script type="text/javascript" class="231">
+           window.onload=function(){
+                //鼠标在area中移动时显示坐标
+                var areaDiv=document.getElementById("area");
+                var showDiv=document.getElementById("show");
+                //onmousemove
+                //兼容IE8
+                if(!event){
+                    event=window.event;
+                }
+                areaDiv.onmousemove=function(event){
+                    var x=event.clientX;
+                    var y=event.clientY;
+                    showDiv.innerHTML="X="+x+" Y="+y;
+                }
+           }
+        </script>
+    </head>
+    <body>
+        <div id="area"></div>
+        <div id="show"></div>
+        <a href="https://www.w3school.com.cn/jsref/dom_obj_event.asp" target="_blank">事件对象传送门</a>
+    </body>
+</html>
