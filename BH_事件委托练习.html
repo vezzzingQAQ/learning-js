@@ -45,12 +45,15 @@
         <script type="text/javascript" class="231">
             $(function(){
                 $("a").click(function(){
-                    var mask="<div class=\"mask\">\n"+
+                    var $mask=$("<div class=\"mask\">\n"+
                         "<div class=\"login\">\n"+
                         "<span></span>\n"+
                         "</div>\n"+
-                        "</div>\n";
-                    $("body").append(mask);
+                        "</div>\n");
+                    $("body").append($mask);
+                    $("body").delegate(".login>span","click",function(){
+                        $mask.remove();
+                    });
                     return false;
                 });
             });
