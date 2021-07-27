@@ -18,11 +18,64 @@
                 margin: 50px auto;
                 border: 1px solid #000;
             }
+            .box>h1{
+                font-size: 20px;
+                line-height: 35px;
+                color: deeppink;
+                padding-left: 10px;
+                border: 1px dashed #ccc;
+            }
+            .box>ul>li{
+                list-style: none;
+                padding: 5px 10px;
+                border: 1px dashed #ccc;
+            }
+            .box>ul>li:nth-child(-n+3) span{
+                background-color: deeppink;
+            }
+            .box>ul>li>span{
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-color: #ccc;
+                text-align: center;
+                line-height: 20px;
+                margin-right: 10px;
+            }
+            .box .content{
+                overflow: hidden;
+                margin-top: 5px;
+                display: none;
+            }
+            .box .content>img{
+                width: 80px;
+                float: left;
+            }
+            .box .content>p{
+                width: 180px;
+                height: 120px;
+                font-size: 12px;
+                line-height: 20px;
+                float: right;
+            }
+
+            .current .content{
+                /*用于实现项目的隐藏与显示*/
+                display: block;
+            }
         </style>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
         <script type="text/javascript" class="231">
             $(function(){
-               
+               //鼠标移入移出监听
+               $(".box li").mouseenter(function(){
+                   //★谁触发事件this就是谁
+                   $(this).addClass("current");
+               })
+               $(".box li").mouseleave(function(){
+                   //★谁触发事件this就是谁
+                   $(this).removeClass("current");
+               })
             });
         </script>
     </head>
@@ -30,13 +83,54 @@
         <div class="box">
             <h1>❤❤❤❤❤❤❤❤❤❤❤</h1>
             <ul>
-                <li><span>1</span>名称</li>
-                <li><span>2</span>名称</li>
-                <li><span>3</span>名称</li>
-                <li><span>4</span>名称</li>
-                <li><span>5</span>名称</li>
-                <li><span>6</span>名称</li>
-                <li><span>7</span>名称</li>
+                <li><span>1</span>名称
+                    <div class="content">
+                        <img src="pictures/f-vezzzinga.jpg" alt="">
+                        <p>乱七八糟乱七八糟乱七八糟乱七八糟乱
+                            乱七八糟乱七八糟乱七八糟乱七八糟乱七八糟
+                        </p>
+                    </div>
+                </li>
+                <li><span>2</span>名称
+                    <div class="content">
+                        <img src="pictures/f-vezzzingb.jpg" alt="">
+                        <p>乱七八糟乱七八糟乱七八糟乱七八糟乱
+                            乱七八糟乱七八糟乱七八糟乱七八糟乱七八糟
+                        </p>
+                    </div>
+                </li>
+                <li><span>3</span>名称
+                    <div class="content">
+                        <img src="pictures/f-vezzzinga.jpg" alt="">
+                        <p>乱七八糟乱七八糟乱七八糟乱七八糟乱
+                            乱七八糟乱七八糟乱七八糟乱七八糟乱七八糟
+                        </p>
+                    </div>
+                </li>
+                <li><span>4</span>名称
+                    <div class="content">
+                        <img src="pictures/f-vezzzingb.jpg" alt="">
+                        <p>乱七八糟乱七八糟乱七八糟乱七八糟乱
+                            乱七八糟乱七八糟乱七八糟乱七八糟乱七八糟
+                        </p>
+                    </div>
+                </li>
+                <li><span>5</span>名称
+                    <div class="content">
+                        <img src="pictures/f-vezzzinga.jpg" alt="">
+                        <p>乱七八糟乱七八糟乱七八糟乱七八糟乱
+                            乱七八糟乱七八糟乱七八糟乱七八糟乱七八糟
+                        </p>
+                    </div>
+                </li>
+                <li><span>6</span>名称
+                    <div class="content">
+                        <img src="pictures/f-vezzzingb.jpg" alt="">
+                        <p>乱七八糟乱七八糟乱七八糟乱七八糟乱
+                            乱七八糟乱七八糟乱七八糟乱七八糟乱七八糟
+                        </p>
+                    </div>
+                </li>
             </ul>
         </div>
     </body>
