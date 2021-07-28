@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jquery</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.3.8">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .ad{
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                display: none;
+            }
+            .ad>span{
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: #9e9e7f;
+                line-height: 30px;
+                text-align: center;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script type="text/javascript" class="231">
+            $(function(){
+                $("span").click(function(){
+                    $(".ad").remove();
+                })
+                /*
+                $(".ad").slideDown(800,function(){
+                    $(".ad").fadeOut(400,function(){
+                        $(".ad").fadeIn(400);
+                    })
+                });*/
+                //动画队列
+                $(".ad").stop().slideDown(1000).fadeOut(300).fadeIn(300);
+            });
+        </script>
+    </head>
+    <body>
+        <div class="ad">
+            <img src="pictures/ad.jpg" alt="">
+            <span>X</span>
+        </div>
+    </body>
+</html>
