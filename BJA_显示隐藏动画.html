@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jquery</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.3.8">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+            body{
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+            }
+            div{
+                display: block;
+                width: 200px;
+                height: 200px;
+                position: relative;
+                margin: 200px auto;
+                background-color: purple;
+                display: none;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script type="text/javascript" class="231">
+            $(function(){
+               $("button").eq(0).click(function(){
+                    //$("div").css("display","block");无动画
+                    $("div").show(1000);
+               });
+               $("button").eq(1).click(function(){
+                    $("div").hide(1000,function(){
+                        alert("动画显示完毕");
+                    });
+               });
+               $("button").eq(2).click(function(){
+                    $("div").toggle(300);
+               });
+
+            });
+        </script>
+    </head>
+    <body>
+        <button>显示</button>
+        <button>隐藏</button>
+        <button>切换</button>
+        <div></div>
+    </body>
+</html>
