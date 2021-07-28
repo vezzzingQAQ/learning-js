@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jquery</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.3.8">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .nav{
+                list-style: none;
+                width: 300px;
+                margin: 100px auto;
+            }
+            .nav>li{
+                border: 3px solid palevioletred;
+                line-height: 35px;
+                border-bottom: none;
+                background-color: rgb(181, 232, 255);
+                text-indent: 2em;
+                position: relative;
+            }
+            .nav>li:last-child{
+                border-bottom: 3px solid palevioletred;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+            .nav>li:first-child{
+                border-top: 3px solid palevioletred;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            .nav>li>span{
+                background: url("pictures/arrow.png") no-repeat center center;
+                background-size: contain;
+                display: inline-block;
+                width: 22px;
+                height: 22px;
+                position: absolute;
+                right: 10px;
+                top: 6.5px;
+            }
+
+            .nav .sub{
+                display: none;
+            }
+            .nav .sub>li{
+                list-style: none;
+                background-color: rgb(175, 149, 226);
+                border-bottom: 2px solid white;
+            }
+            .nav .sub>li:hover{
+                background-color: rgb(231, 161, 149);
+            }
+
+            .nav .current span{
+                transform: rotate(90deg);
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script type="text/javascript" class="231">
+            $(function(){
+                //监听一级菜单点击事件
+                $(".nav>li").click(function(){
+                    //展开二级菜单
+                    var $sub=$(this).children(".sub");
+                    $sub.slideDown(800);
+                    //收起所有非当前二级菜单
+                    var $siblingSub=$(this).siblings().children(".sub");
+                    $siblingSub.slideUp(800);
+                    //旋转箭头
+                    $(this).addClass("current");
+                    $(this).siblings().removeClass("current");
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <ul class="nav">
+            <li>一级菜单<span></span>
+            <!--直接输入这个ul>li{二级菜单}*5-->
+                <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <li>二级菜单<span></span>
+                <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <li>三级菜单<span></span>
+                <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <li>四级菜单<span></span>
+                <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <li>五级菜单<span></span>
+                <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <li>六级菜单<span></span>
+                <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <!--按住alt可以跨行多选-->
+        </ul>
+    </body>
+</html>
