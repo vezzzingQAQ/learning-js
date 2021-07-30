@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jquery</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.3.8">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            div{
+                width: 600px;
+                height: 160px;
+                border: 1px solid #000;
+                margin: 100px auto;
+                overflow: hidden;
+            }
+            ul{
+                list-style: none;
+                width: 1800px;
+                height: 160px;
+                background: rgb(0, 0, 0);
+            }
+            ul>li{
+                float: left;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script type="text/javascript" class="231">
+            $(function(){
+                var timer=null;
+                var totalPictures=4;
+                var offset=0;
+                //让图片滚动
+                function autoPlay(){
+                    timer=setInterval(function(){
+                        offset-=8;
+                        if(offset<=-totalPictures*300){
+                            offset=0;
+                        }
+                        $("ul").css("marginLeft",offset);
+                    },50);
+                }
+                autoPlay();
+                //监听移入移出
+                $("li").hover(function(){
+                    //stop roll
+                    clearInterval(timer);
+                    //蒙版
+                    $(this).siblings().stop().fadeTo(800,0.3);
+                    $(this).stop().fadeTo(800,1);
+                },function(){
+                    //continue roll
+                    autoPlay();
+                    $("li").stop().fadeTo(800,1);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li><img src="pictures/banner1.jpg" alt=""></li>
+                <li><img src="pictures/banner2.jpg" alt=""></li>
+                <li><img src="pictures/banner3.jpg" alt=""></li>
+                <li><img src="pictures/banner4.jpg" alt=""></li>
+                <li><img src="pictures/banner1.jpg" alt=""></li>
+                <li><img src="pictures/banner2.jpg" alt=""></li>
+            </ul>
+        </div>
+    </body>
+</html>
