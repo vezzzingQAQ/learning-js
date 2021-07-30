@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jquery</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="VEZZZING'S BILDINGS">
+		<meta name="description" content="StartAt2021.3.8">
+		<meta name="author" content="VEZZZING">    
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .header{
+                width: 70%;
+                margin-left: 15%;
+                margin-right: 15%;
+                height: 90px;
+                line-height: 90px;
+                background-color: rgb(174, 229, 243);
+                text-align: center;
+                font-size: 30px;
+            }
+            .content{
+                width: 70%;
+                margin-left: 15%;
+                margin-right: 15%;
+                background-color: rgb(235, 201, 201);
+            }
+            .pannIn{
+                width: 80%;
+                margin-left: 10%;
+                margin-right: 10%;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                position: relative;
+            }
+            .content .enter{
+                width: 100%;
+                height: 200px;
+                resize: none;
+                border: none;
+                border-radius: 10px;
+                outline: none;
+                padding: 5px;
+            }
+            .button{
+                width: 50px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 11px;
+                text-align: center;
+                background-color: rgb(183, 227, 240);
+                border: none;
+                outline: none;
+                border-radius: 7px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.075), 0 6px 20px rgba(0, 0, 0, 0.103);
+            }
+            .del{
+                background-color: rgb(231, 179, 179);
+            }
+            .tra{
+                background-color: rgb(231, 179, 228);
+                font-size: 15px;
+            }
+
+            .contentList{
+                width: 70%;
+                margin-left: 15%;
+                margin-right: 15%;
+                background-color: rgb(201, 235, 235);
+            }
+            .contentList .info{
+                display: block;
+                background-color: white;
+                border-radius: 10px;
+                outline: none;
+                padding: 5px;
+            }
+            .contentList .time{
+                float: right;
+                padding: 7px;
+                background-color: rgba(255, 255, 255, 0.384);
+                border-radius: 10px;
+            }
+            .section{
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                margin-top: 40px;
+                margin-bottom: 40px;
+                border-radius: 8px;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
+        <script type="text/javascript" class="231">
+            $(function(){
+                //监听发布按钮的点击
+                //用户有输入才能点击
+                $("body").delegate(".enter","propertychange input",function(){
+                    //↑固定写法
+                    if($(".enter").val().length>0){
+                        $(".send").prop("disabled",false);
+                    }else{
+                        $(".send").prop("disabled",true);
+                    }
+                });
+                //监听发布按钮点击
+                $(".send").click(function(){
+                    var $text=$(".enter").val();
+                    var $add=createElement($text);
+                    $(".cott").prepend($add);
+                });
+                //监听点赞点踩
+                $("body").delegate(".like","click",function(){
+                    var number=parseInt($(this).val().substr(3));
+                    number+=1;
+                    $(this).val("👍 "+number);
+                });
+                $("body").delegate(".dislike","click",function(){
+                    var number=parseInt($(this).val().substr(3));
+                    number+=1;
+                    $(this).val("👎 "+number);
+                });
+                //删除
+                $("body").delegate(".del","click",function(){
+                    $(this).parents(".contentList").remove();
+                });
+                function createElement(textInput){
+                    var temp="<section class=\"contentList section\"><div class=\"pann\"><div class=\"pannIn\"><input type=\"button\"class=\"button del\"value=\"删除\">"+
+                        "\n<input type=\"button\" class=\"button like tra\" value=\"👍 0\">"+
+                        "\n<input type=\"button\" class=\"button dislike tra\" value=\"👎 0\">"+
+                        "<p class=\"time\">"+formateTime()+"</p><br><br><p class=\"info\">"+textInput+"</p></div></div></section>";
+                    return(temp);
+                }
+                function formateTime(){
+                    var date=new Date();
+                    var arr=[date.getFullYear()+"-",
+                        date.getMonth()+1+"-",
+                        date.getDate()+" ",
+                        date.getHours()+":",
+                        date.getMinutes()+":",
+                        date.getSeconds()];
+                    return(arr.join(""));
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <section class="header section">
+            vezzzing
+        </section>
+        <section class="content section">
+            <div class="pann">
+                <div class="pannIn">
+                    <textarea class="enter"></textarea>
+                    <br><br>
+                    <input type="button" class="send button" value="发布" disabled>
+                </div>
+            </div>
+        </section>
+        <div class="cott">
+            <!--
+            <section class="contentList section">
+                <div class="pann">
+                    <div class="pannIn">
+                        <input type="button" class="button del" value="删除">
+                        <input type="button" class="button like tra" value="👍 0">
+                        <input type="button" class="button dislike tra" value="👎 0">
+                        <p class="time">2021.7.30</p>
+                        <br><br>
+                        <p class="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod sequi eaque consequuntur eius saepe accusantium dignissimos itaque quibusdam non excepturi, dolores explicabo eos enim veritatis unde officiis, odio nam necessitatibus!</p>
+                    </div>
+                </div>
+            </section>
+            -->
+        </div>
+    </body>
+</html>
